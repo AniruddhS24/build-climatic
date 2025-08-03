@@ -16,31 +16,6 @@ export default function Home() {
       alt: "",
     },
     {
-      src: "./Eco design1.jpg",
-      caption: "Eco Design",
-      alt: "",
-    },
-    {
-      src: "./Eco design2.jpg",
-      caption: "Eco Design",
-      alt: "",
-    },
-    {
-      src: "./Eco design3.jpg",
-      caption: "Eco Design",
-      alt: "",
-    },
-    {
-      src: "./Eco design4.jpg",
-      caption: "Eco Design",
-      alt: "",
-    },
-    {
-      src: "./Eco design5.jpg",
-      caption: "Eco Design",
-      alt: "",
-    },
-    {
       src: "./Eco township.jpg",
       caption: "Township Design",
       alt: "",
@@ -133,9 +108,14 @@ export default function Home() {
                     <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                   </button>
                 ))}
-                {/* <button className="ml-4 bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2.5 rounded-full text-lg font-medium hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-green-700">
+                <button
+                  onClick={() =>
+                    window.open("mailto:shri.shrinivasa@gmail.com", "_blank")
+                  }
+                  className="ml-4 bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2.5 rounded-full text-lg font-medium hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-green-700"
+                >
                   Contact Us
-                </button> */}
+                </button>
               </div>
             </div>
           </div>
@@ -230,28 +210,28 @@ export default function Home() {
 
           {/* Full Width Image Carousel */}
           <div className="w-full">
-            <div className="relative flex items-center justify-center px-6">
-              {/* Left Navigation Button */}
-              <button
-                onClick={goToPreviousImage}
-                className="absolute left-6 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg flex-shrink-0"
-              >
-                <svg
-                  className="w-6 h-6 text-slate-700"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+            <div className="flex items-center justify-center px-6">
+              <div className="relative w-full max-w-6xl bg-white rounded-3xl overflow-hidden border border-slate-200">
+                {/* Left Navigation Button */}
+                <button
+                  onClick={goToPreviousImage}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    className="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
 
-              <div className="w-full max-w-6xl bg-white rounded-3xl overflow-hidden border border-slate-200">
                 <div className="relative h-96 md:h-[500px]">
                   <img
                     src={projectImages[currentImageIndex].src}
@@ -259,6 +239,13 @@ export default function Home() {
                     className="w-full h-full object-cover transition-opacity duration-500 grayscale"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+
+                  {/* Watermark */}
+                  <div className="absolute top-6 left-6">
+                    <p className="text-white/80 italic bg-black/20 px-3 py-1 rounded-md backdrop-blur-sm">
+                      © Build-Climatic 2025
+                    </p>
+                  </div>
 
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <p className="text-white text-lg font-medium leading-relaxed">
@@ -284,27 +271,27 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
-              </div>
 
-              {/* Right Navigation Button */}
-              <button
-                onClick={goToNextImage}
-                className="absolute right-6 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg flex-shrink-0"
-              >
-                <svg
-                  className="w-6 h-6 text-slate-700"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                {/* Right Navigation Button */}
+                <button
+                  onClick={goToNextImage}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    className="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
           {/* Full Width Horizontal Scrolling Carousel */}
