@@ -109,9 +109,7 @@ export default function Home() {
                   </button>
                 ))}
                 <button
-                  onClick={() =>
-                    window.open("mailto:shri.shrinivasa@gmail.com", "_blank")
-                  }
+                  onClick={() => scrollToSection("contact")}
                   className="ml-4 bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2.5 rounded-full text-lg font-medium hover:shadow-xl transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-green-700"
                 >
                   Contact Us
@@ -667,7 +665,10 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      <footer
+        id="contact"
+        className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white"
+      >
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center">
             <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
@@ -677,10 +678,44 @@ export default function Home() {
               Design & Build Passive Systems - Climate Responsive Design
             </p>
             <div className="w-32 h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 mx-auto rounded-full mb-8"></div>
-            <p className="text-slate-400 text-lg max-w-3xl mx-auto leading-relaxed">
-              Creating sustainable, energy-efficient environments that harmonize
-              with nature through innovative climate responsive design solutions
-            </p>
+
+            {/* Contact Information */}
+            <div className="mt-12 mb-8">
+              <h4 className="text-2xl font-semibold text-white mb-4">
+                Get In Touch
+              </h4>
+              <div className="space-y-3">
+                <a
+                  href="mailto:buildclimatic@gmail.com"
+                  className="inline-block text-blue-400 hover:text-blue-300 text-lg font-medium transition-colors duration-300 hover:underline"
+                >
+                  buildclimatic@gmail.com
+                </a>
+                <div className="flex items-center justify-center text-slate-300 text-lg">
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  Bangalore, India
+                </div>
+              </div>
+            </div>
+
             <div className="mt-12 pt-8 border-t border-slate-700">
               <p className="text-slate-500 text-sm">
                 © 2025 Build-Climatic. All rights reserved.
